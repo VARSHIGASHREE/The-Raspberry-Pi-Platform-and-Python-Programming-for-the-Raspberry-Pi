@@ -1,0 +1,11 @@
+from machine import Pin
+from time import sleep
+LED = Pin(15, Pin.OUT)      
+BUTTON = Pin(16, Pin.IN)    
+while True:
+    # if the signal from the button is HIGH (button is pressed), turn LED on
+    if BUTTON.value() == 1:
+        LED.on()
+        sleep(0.1)
+    else:
+        LED.off()
